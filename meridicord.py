@@ -41,7 +41,15 @@ elif mode == 2:
 	def recvMsg(ws, msg):
 		msg = json.loads(msg)
 		try:
-			RPC.update(details=msg["title"], state="by " + msg["performer"], large_image="logo", large_text="Meridius")
+			album = "Meridius"
+			cover = "logo"
+			if "album" in msg:
+				album = msg["album"]["title"]
+				try:
+					cover = msg["album"]["thumb"]["photo_600"]
+				except:
+					pass
+			RPC.update(details=msg["title"], state="by " + msg["performer"], large_image=cover, large_text=album)
 		except DiscordError:
 			print("Произошла ошибка Discord")
 		except DiscordNotFound:
