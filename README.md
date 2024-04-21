@@ -1,7 +1,7 @@
 # meridicord
 Rich Presence для Meridius на Linux (и не только)
 
-![](https://habrastorage.org/webt/ut/iu/bd/utiubdcfwf4c8n9d7j48nfe529e.jpeg)
+![](https://habrastorage.org/webt/7g/-i/vu/7g-ivueo8ywgcdwtw6tfzal2x9w.jpeg)
 
 ## Зависимости
 
