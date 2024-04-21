@@ -44,11 +44,12 @@ elif mode == 2:
 			album = "Meridius"
 			cover = "logo"
 			if "album" in msg:
-				album = msg["album"]["title"]
-				try:
-					cover = msg["album"]["thumb"]["photo_600"]
-				except:
-					pass
+				if msg["album"] != False:
+					album = msg["album"]["title"]
+					try:
+						cover = msg["album"]["thumb"]["photo_600"]
+					except:
+						pass
 			RPC.update(details=msg["title"], state="by " + msg["performer"], large_image=cover, large_text=album)
 		except DiscordError:
 			print("Произошла ошибка Discord")
